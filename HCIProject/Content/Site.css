@@ -23,6 +23,37 @@ textarea {
     max-width: 280px;
 }
 
+#accountButton {
+    background: url(~/Content/Images/if_User_Accounts_alt_100297.png);
+    height: 35px;
+    width: auto;
+    margin-top: 5px;
+    display: block;
+}
+.washer-div {
+    border-radius: 5px;
+    width: 175px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px 6px 1px rgba(128, 128, 128, 0.80);
+    height:125px;
+}
+.machine-number {
+    padding-top: 25px;
+    text-align: center;
+}
+.machine-status{
+    text-align:center;
+}
+
+.done {
+    background: rgba(255, 216, 0, 0.46);
+}
+.inUse {
+    background: rgba(255, 0, 0, 0.58);
+}
+.open {
+    background: rgba(0, 255, 33, 0.37);
+}
 .machine-type-header {
     font-size: 24px;
     padding-top: 10px;
@@ -31,28 +62,4 @@ textarea {
 .room-selector {
     padding-top: 10px;
     padding-left: 20px;
-}
-
-.machine-tile {
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 3px;
-    margin: 25px;
-    padding:10px;
-    font-size: 16px;
-}
-
-.machine-tile.open {
-    border-color: forestgreen;
-    background-color: lightgreen;
-}
-
-.machine-tile.busy {
-    border-color: darkred;
-    background-color: lightpink;
-}
-
-.machine-tile.idle {
-    border-color: darkgoldenrod;
-    background-color: lightgoldenrodyellow;
 }

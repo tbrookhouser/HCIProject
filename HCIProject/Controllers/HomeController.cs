@@ -13,11 +13,11 @@ namespace HCIProject.Controllers
 
         public void InitializeLaundryRoom()
         {
-            Washer washer1 = new Washer(1, "Washer 1", "open");
-            Washer washer2 = new Washer(2, "Washer 2", "open");
-            Washer washer3 = new Washer(3, "Washer 3", "busy");
-            Washer washer4 = new Washer(4, "Washer 4", "idle");
-            Washer washer5 = new Washer(5, "Washer 5", "open");
+            Washer washer1 = new Washer(1, "1", "open");
+            Washer washer2 = new Washer(2, "2", "open");
+            Washer washer3 = new Washer(3, "3", "busy");
+            Washer washer4 = new Washer(4, "4", "idle");
+            Washer washer5 = new Washer(5, "5", "open");
 
             List<Washer> washerList = new List<Washer>();
             washerList.Add(washer1);
@@ -26,11 +26,11 @@ namespace HCIProject.Controllers
             washerList.Add(washer4);
             washerList.Add(washer5);
 
-            Dryer dryer1 = new Dryer(1, "Dryer 1", "open");
-            Dryer dryer2 = new Dryer(2, "Dryer 2", "busy");
-            Dryer dryer3 = new Dryer(3, "Dryer 3", "idle");
-            Dryer dryer4 = new Dryer(4, "Dryer 4", "open");
-            Dryer dryer5 = new Dryer(5, "Dryer 5", "idle");
+            Dryer dryer1 = new Dryer(1, "1", "open");
+            Dryer dryer2 = new Dryer(2, "2", "busy");
+            Dryer dryer3 = new Dryer(3, "3", "idle");
+            Dryer dryer4 = new Dryer(4, "4", "open");
+            Dryer dryer5 = new Dryer(5, "5", "idle");
 
             List<Dryer> dryerList = new List<Dryer>();
             dryerList.Add(dryer1);
