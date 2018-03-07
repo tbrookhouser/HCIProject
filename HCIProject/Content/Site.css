@@ -30,18 +30,18 @@ textarea {
     margin-top: 5px;
     display: block;
 }
-.machineBox {
+.washer-div {
     border-radius: 5px;
     width: 175px;
     margin-bottom: 25px;
     box-shadow: 5px 5px 6px 1px rgba(128, 128, 128, 0.80);
     height:125px;
 }
-.machineNumber {
+.machine-number {
     padding-top: 25px;
     text-align: center;
 }
-.machineStatus{
+.machine-status{
     text-align:center;
 }
 
@@ -53,4 +53,13 @@ textarea {
 }
 .open {
     background: rgba(0, 255, 33, 0.37);
+}
+.machine-type-header {
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+.room-selector {
+    padding-top: 10px;
+    padding-left: 20px;
 }

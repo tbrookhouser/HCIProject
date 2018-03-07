@@ -1,112 +1,65 @@
-﻿@{
+﻿@model HCIProject.Models.LaundryRoom
+
+@{
     ViewBag.Title = "Home Page";
 }
-
-<h2>Washers</h2>
-<div class="row">
-    <div class="col-md-3">
-        <div class="machineBox done">
-            <h1 class="machineNumber">1</h1>
-            <h4 class="machineStatus">DONE</h4>
-        </div>
+<body>
+    <div class="machine-type-header">Washers</div>
+    <div class="row">
+        @foreach (var washer in Model.washerList)
+        {
+            <div class="col-md-3">
+                @if (washer.status.Equals("open"))
+                {
+                    <div class="washer-div open">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">OPEN</h4>
+                    </div>
+                }
+                else if (washer.status.Equals("idle"))
+                {
+                    <div class="washer-div done">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">DONE</h4>
+                    </div>
+                }
+                else
+                {
+                    <div class="washer-div inUse">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">IN USE</h4>
+                    </div>
+                }
+            </div>
+        }
     </div>
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">2</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
+    <div class="machine-type-header">Dryers</div>
+    <div class="row">
+        @foreach (var dryer in Model.dryerList)
+        {
+            <div class="col-md-3">
+                @if (dryer.status.Equals("open"))
+                {
+                    <div class="washer-div open">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">OPEN</h4>
+                    </div>
+                }
+                else if (dryer.status.Equals("idle"))
+                {
+                    <div class="washer-div done">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">DONE</h4>
+                    </div>
+                }
+                else
+                {
+                    <div class="washer-div inUse">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">IN USE</h4>
+                    </div>
+                }
+            </div>
+        }
     </div>
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">3</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox open">
-            <h1 class="machineNumber">4</h1>
-            <h4 class="machineStatus">OPEN</h4>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="machineBox open">
-            <h1 class="machineNumber">5</h1>
-            <h4 class="machineStatus">OPEN</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox done">
-            <h1 class="machineNumber">6</h1>
-            <h4 class="machineStatus">DONE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">7</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">8</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
-    </div>
-    </div>
-
-
-<h2>Dryers</h2>
-<div class="row">
-    <div class="col-md-3">
-        <div class="machineBox open">
-            <h1 class="machineNumber">1</h1>
-            <h4 class="machineStatus">OPEN</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox open">
-            <h1 class="machineNumber">2</h1>
-            <h4 class="machineStatus">OPEN</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox done">
-            <h1 class="machineNumber">3</h1>
-            <h4 class="machineStatus">DONE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox done">
-            <h1 class="machineNumber">4</h1>
-            <h4 class="machineStatus">DONE</h4>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">5</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox inUse">
-            <h1 class="machineNumber">6</h1>
-            <h4 class="machineStatus">IN USE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox done">
-            <h1 class="machineNumber">7</h1>
-            <h4 class="machineStatus">DONE</h4>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="machineBox open">
-            <h1 class="machineNumber">8</h1>
-            <h4 class="machineStatus">OPEN</h4>
-        </div>
-    </div>
-</div>
+</body>
