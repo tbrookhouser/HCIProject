@@ -22,3 +22,35 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#accountButton {
+    background: url(~/Content/Images/if_User_Accounts_alt_100297.png);
+    height: 35px;
+    width: auto;
+    margin-top: 5px;
+    display: block;
+}
+.machineBox {
+    border-radius: 5px;
+    width: 175px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px 6px 1px rgba(128, 128, 128, 0.80);
+    height:125px;
+}
+.machineNumber {
+    padding-top: 25px;
+    text-align: center;
+}
+.machineStatus{
+    text-align:center;
+}
+
+.done {
+    background: rgba(255, 216, 0, 0.46);
+}
+.inUse {
+    background: rgba(255, 0, 0, 0.58);
+}
+.open {
+    background: rgba(0, 255, 33, 0.37);
+}
