@@ -44,6 +44,10 @@ textarea {
 .machine-status{
     text-align:center;
 }
+.kiosk-body {
+    padding-left:12%;
+    background-color: #eaeaea;
+}
 
 .done {
     background: rgba(255, 216, 0, 0.46);
