@@ -13,27 +13,16 @@
             <div class="navbar-header">
                 @Html.ActionLink("Laundry Monitor", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <div class="nav navbar-nav" style="margin-top:15px; margin-left:60%">
-                    <select>
-                        <option selected="selected">Kauffman</option>
-                        <option>Abel</option>
-                        <option>Sandoz</option>
-                        <option>University Suites</option>
-                    </select>
-                    <select>
-                        <option selected="selected">Floor 1</option>
+            <form>
+                <div class="form-group room-selector">
+                    <select class="form-control" id="sel1">
+                        <option>Floor 1</option>
                         <option>Floor 2</option>
                         <option>Floor 3</option>
                     </select>
                 </div>
-                <div>
-                    <a href='@Url.Action("Index", "Account")' class="pull-right">
-                        <img src="~/Content/Images/if_User_Accounts_alt_100297.png" id="accountButton"/>
-                    </a>
-                </div>
-            </div>
-        </div>
+            </form>
+         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
