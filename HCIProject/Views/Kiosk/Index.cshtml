@@ -1,14 +1,18 @@
 ﻿@model HCIProject.Models.LaundryRoom
-
 @{
-    ViewBag.Title = "Home Page";
+    Layout = null;
 }
-<body>
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+<body class="kiosk-body">
+    <h2>Select A Machine:</h2>
     <div class="machine-type-header">Washers</div>
     <div class="row">
         @foreach (var washer in Model.washerList)
         {
-            <div class="col-md-3">
+            <div class="col-sm-2">
                 @if (washer.status.Equals("open"))
                 {
                     <div class="washer-div open">
@@ -37,7 +41,7 @@
     <div class="row">
         @foreach (var dryer in Model.dryerList)
         {
-            <div class="col-md-3">
+            <div class="col-sm-2">
                 @if (dryer.status.Equals("open"))
                 {
                     <div class="washer-div open">
