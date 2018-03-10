@@ -6,64 +6,66 @@
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 
-<body class="kiosk-body">
-    <h2>Select A Machine:</h2>
-    <div class="machine-type-header">Washers</div>
-    <div class="row">
-        @foreach (var washer in Model.washerList)
+<body class="kiosk-background">
+    <div class="kiosk-body">
+        <h2 id="kioskTitle">Select A Machine:</h2>
+        <div class="machine-type-header">Washers</div>
+        <div class="row">
+            @foreach (var washer in Model.washerList)
         {
             <div class="col-sm-2">
                 @if (washer.status.Equals("open"))
-                {
-                    <div class="washer-div open">
-                        <h2 class="machine-number">@washer.machineName</h2>
-                        <h4 class="machine-status">OPEN</h4>
-                    </div>
-                }
-                else if (washer.status.Equals("idle"))
-                {
-                    <div class="washer-div done">
-                        <h2 class="machine-number">@washer.machineName</h2>
-                        <h4 class="machine-status">DONE</h4>
-                    </div>
-                }
-                else
-                {
-                    <div class="washer-div inUse">
-                        <h2 class="machine-number">@washer.machineName</h2>
-                        <h4 class="machine-status">IN USE</h4>
-                    </div>
-                }
-            </div>
+            {
+                <div class="washer-div open">
+                    <h2 class="machine-number">@washer.machineName</h2>
+                    <h4 class="machine-status">OPEN</h4>
+                </div>
         }
-    </div>
-    <div class="machine-type-header">Dryers</div>
-    <div class="row">
-        @foreach (var dryer in Model.dryerList)
+        else if (washer.status.Equals("idle"))
+        {
+            <div class="washer-div done">
+                <h2 class="machine-number">@washer.machineName</h2>
+                <h4 class="machine-status">DONE</h4>
+            </div>
+    }
+    else
+    {
+        <div class="washer-div inUse">
+            <h2 class="machine-number">@washer.machineName</h2>
+            <h4 class="machine-status">IN USE</h4>
+        </div>
+}
+            </div>
+    }
+        </div>
+        <div class="machine-type-header">Dryers</div>
+        <div class="row">
+            @foreach (var dryer in Model.dryerList)
         {
             <div class="col-sm-2">
                 @if (dryer.status.Equals("open"))
-                {
-                    <div class="washer-div open">
-                        <h2 class="machine-number">@dryer.machineName</h2>
-                        <h4 class="machine-status">OPEN</h4>
-                    </div>
-                }
-                else if (dryer.status.Equals("idle"))
-                {
-                    <div class="washer-div done">
-                        <h2 class="machine-number">@dryer.machineName</h2>
-                        <h4 class="machine-status">DONE</h4>
-                    </div>
-                }
-                else
-                {
-                    <div class="washer-div inUse">
-                        <h2 class="machine-number">@dryer.machineName</h2>
-                        <h4 class="machine-status">IN USE</h4>
-                    </div>
-                }
-            </div>
+            {
+                <div class="washer-div open">
+                    <h2 class="machine-number">@dryer.machineName</h2>
+                    <h4 class="machine-status">OPEN</h4>
+                </div>
         }
+        else if (dryer.status.Equals("idle"))
+        {
+            <div class="washer-div done">
+                <h2 class="machine-number">@dryer.machineName</h2>
+                <h4 class="machine-status">DONE</h4>
+            </div>
+    }
+    else
+    {
+        <div class="washer-div inUse">
+            <h2 class="machine-number">@dryer.machineName</h2>
+            <h4 class="machine-status">IN USE</h4>
+        </div>
+}
+            </div>
+    }
+        </div>
     </div>
 </body>

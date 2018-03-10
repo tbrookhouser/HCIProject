@@ -10,7 +10,17 @@
 }
 
 .kiosk-body {
-    margin-left:15%;
+    padding-left: 15%;
+    background-color: rgba(83, 83, 83, 0.42);
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.kiosk-background {
+    background: url(Images/bubble-background-8539.jpeg);
+    background-repeat: no-repeat;
+    width:100%;
+    height: auto;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -46,29 +56,42 @@ textarea {
 .machine-number {
     padding-top: 25px;
     text-align: center;
+    font-size:36px;
+    color: white;
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .machine-status {
     text-align: center;
+    font-size: 28px;
+    color: white;
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .done {
-    background: rgba(255, 216, 0, 0.46);
+    background: rgb(15, 205, 205);
 }
 
 .inUse {
-    background: rgba(255, 0, 0, 0.58);
+    background: rgb(84, 84, 84);
 }
 
 .open {
-    background: rgba(0, 255, 33, 0.37);
+    background: rgb(149, 205, 15);
 }
 
 .machine-type-header {
     font-size: 24px;
     padding-top: 10px;
+    color: white;
+    font-family:"Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#kioskTitle {
+    color: white;
+    font-family: "Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:36px;
+}
 .room-selector {
     padding-top: 10px;
     padding-left: 20px;
