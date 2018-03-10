@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(Images/bubble-background-8539.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -9,6 +12,21 @@
     padding-right: 15px;
 }
 
+.custom-nav {
+    background-color: #e6eff2;
+    border-color: #e6eff2;
+    min-height: 60px;
+}
+
+.home-title {
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: #2a2a5f;
+}
+    .home-title:hover {
+        text-decoration: none;
+        color: #3a3a3a;
+    }
 .kiosk-body {
     padding-left: 15%;
     background-color: rgba(83, 83, 83, 0.42);
@@ -16,11 +34,13 @@
     padding-bottom: 3%;
 }
 
-.kiosk-background {
-    background: url(Images/bubble-background-8539.jpeg);
-    background-repeat: no-repeat;
-    width:100%;
-    height: auto;
+.machine-group {
+    background-color: rgba(83, 83, 83, 0.42);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -38,11 +58,20 @@ textarea {
 }
 
 #accountButton {
-    background: url(~/Content/Images/if_User_Accounts_alt_100297.png);
-    height: 35px;
+    height: 40px;
     width: auto;
     margin-top: 5px;
     display: block;
+}
+
+.dropdown-custom {
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:15px;
+}
+select {
+    border: 0;
+    border-bottom: 2px solid #2a2a5f;
+    border-radius: 0;
 }
 
 .washer-div {
