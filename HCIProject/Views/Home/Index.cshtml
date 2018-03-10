@@ -5,39 +5,59 @@
 }
 <body>
     <div class="machine-type-header">Washers</div>
-    <div id="washerDiv" class="row">
-        @foreach(var washer in Model.washerList) {
-            <div class="col-md-4"> 
+    <div class="row">
+        @foreach (var washer in Model.washerList)
+        {
+            <div class="col-md-3">
                 @if (washer.status.Equals("open"))
                 {
-                    <div class="machine-tile open"> @washer.machineName</div>
+                    <div class="washer-div open">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">OPEN</h4>
+                    </div>
                 }
                 else if (washer.status.Equals("idle"))
                 {
-                    <div class="machine-tile idle"> @washer.machineName</div>
+                    <div class="washer-div done">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">DONE</h4>
+                    </div>
                 }
                 else
                 {
-                    <div class="machine-tile busy"> @washer.machineName</div>
+                    <div class="washer-div inUse">
+                        <h2 class="machine-number">@washer.machineName</h2>
+                        <h4 class="machine-status">IN USE</h4>
+                    </div>
                 }
             </div>
         }
     </div>
     <div class="machine-type-header">Dryers</div>
     <div class="row">
-        @foreach (var dryer in Model.dryerList) {
-            <div class="col-md-4">
+        @foreach (var dryer in Model.dryerList)
+        {
+            <div class="col-md-3">
                 @if (dryer.status.Equals("open"))
                 {
-                    <div class="machine-tile open"> @dryer.machineName</div>
+                    <div class="washer-div open">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">OPEN</h4>
+                    </div>
                 }
                 else if (dryer.status.Equals("idle"))
                 {
-                    <div class="machine-tile idle"> @dryer.machineName</div>
+                    <div class="washer-div done">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">DONE</h4>
+                    </div>
                 }
                 else
                 {
-                    <div class="machine-tile busy"> @dryer.machineName</div>
+                    <div class="washer-div inUse">
+                        <h2 class="machine-number">@dryer.machineName</h2>
+                        <h4 class="machine-status">IN USE</h4>
+                    </div>
                 }
             </div>
         }

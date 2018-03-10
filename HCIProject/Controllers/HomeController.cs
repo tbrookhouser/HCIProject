@@ -12,6 +12,7 @@ namespace HCIProject.Controllers
 
         public LaundryRoom InitializeLaundryRoom()
         {
+            LaundryRoom laundryRoom = new LaundryRoom();
             Washer washer1 = new Washer(1, "1", "open");
             Washer washer2 = new Washer(2, "2", "open");
             Washer washer3 = new Washer(3, "3", "busy");
@@ -38,18 +39,16 @@ namespace HCIProject.Controllers
             dryerList.Add(dryer4);
             dryerList.Add(dryer5);
 
-            LaundryRoom laundryRoom = new LaundryRoom();
             laundryRoom.washerList = washerList;
             laundryRoom.dryerList = dryerList;
             return laundryRoom;
-
         }
 
         public ActionResult Index()
         {
-            LaundryRoom laundryRoom = InitializeLaundryRoom();
+            var laundryRoom1 = InitializeLaundryRoom();
 
-            return View(laundryRoom);
+            return View(laundryRoom1);
         }
 
         public ActionResult About()
