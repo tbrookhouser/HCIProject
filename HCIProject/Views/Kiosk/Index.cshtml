@@ -4,7 +4,8 @@
 }
 
 @Styles.Render("~/Content/css")
-@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/Index.js")
+
 
 <body class="kiosk-body">
     <h2>Select A Machine:</h2>
@@ -12,12 +13,12 @@
     <div class="row">
         @foreach (var washer in Model.washerList)
         {
-            <div class="col-sm-2">
+            <div class="col-sm-2" onclick="clicked('@(washer.status)', @(washer.machineName))">
                 @if (washer.status.Equals("open"))
                 {
-                    <div class="washer-div open">
+                    <div id="@(washer.machineName)" class="washer-div open">
                         <h2 class="machine-number">@washer.machineName</h2>
-                        <h4 class="machine-status">OPEN</h4>
+                        <h4 id="status_@washer.machineName" class="machine-status">OPEN</h4>
                     </div>
                 }
                 else if (washer.status.Equals("idle"))
@@ -65,5 +66,52 @@
                 }
             </div>
         }
+    </div>
+
+    <div id="reserveOverlay">
+        <button class="close" onclick="closeClicked('reserveOverlay')">X</button>
+        <h3 class="reserve-header">Reserve</h3>
+        <form>
+            <p class="cycle-type">Select Cycle Type</p>
+            <select>
+                <option> Regular Wash </option>
+                <option> Delicates </option>
+                <option> Permanent Press </option>
+            </select>
+        </form>
+        <button class="nextButton" onclick="nextClicked()">Next</button>
+    </div>
+
+    <div id="pinOverlay">
+        <button class="close" onclick="closeClicked('pinOverlay')">X</button>
+        <h3>Enter Pin</h3>
+        <div>
+            <span class="numberInput"></span>
+            <span class="numberInput"></span>
+            <span class="numberInput"></span>
+            <span class="numberInput"></span>
+        </div>
+        <table id="keypad">
+            <tr>
+                <td class="btn">1</td>
+                <td class="btn">2</td>
+                <td class="btn">3</td>
+            </tr>
+            <tr>
+                <td class="btn">4</td>
+                <td class="btn">5</td>
+                <td class="btn">6</td>
+            </tr>
+            <tr>
+                <td class="btn">7</td>
+                <td class="btn">8</td>
+                <td class="btn">9</td>
+            </tr>
+            <tr>
+                <td class="btn">DEL</td>
+                <td class="btn">0</td>
+                <td class="btn" onclick="okClicked()">OK</td>
+            </tr>
+        </table>
     </div>
 </body>
