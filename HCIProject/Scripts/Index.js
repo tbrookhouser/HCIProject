@@ -11,7 +11,7 @@ function clicked(status, name) {
 
 function closeClicked(string) {
     document.getElementById(string).style.visibility = 'hidden';
-} 
+}
 
 function nextClicked() {
     document.getElementById("reserveOverlay").style.visibility = "hidden";

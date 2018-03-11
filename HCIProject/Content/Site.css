@@ -10,7 +10,7 @@
 }
 
 .kiosk-body {
-    margin-left:15%;
+    margin-left: 15%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -88,9 +88,10 @@ textarea {
 }
 
 .reserve-header {
-   padding: 18px 0 18px 0;
-   text-align: center;
+    padding: 18px 0 18px 0;
+    text-align: center;
 }
+
 .nextButton {
     position: absolute;
     left: 87%;
