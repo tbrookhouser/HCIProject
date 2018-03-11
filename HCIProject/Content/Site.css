@@ -23,10 +23,12 @@
     font-size: 24px;
     color: #2a2a5f;
 }
+
     .home-title:hover {
         text-decoration: none;
         color: #3a3a3a;
     }
+
 .kiosk-body {
     padding-left: 15%;
     background-color: rgba(83, 83, 83, 0.42);
@@ -66,8 +68,9 @@ textarea {
 
 .dropdown-custom {
     font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:15px;
+    font-size: 15px;
 }
+
 select {
     border: 0;
     border-bottom: 2px solid #2a2a5f;
@@ -85,7 +88,7 @@ select {
 .machine-number {
     padding-top: 25px;
     text-align: center;
-    font-size:36px;
+    font-size: 36px;
     color: white;
     font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -113,15 +116,82 @@ select {
     font-size: 24px;
     padding-top: 10px;
     color: white;
-    font-family:"Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #kioskTitle {
     color: white;
     font-family: "Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:36px;
+    font-size: 36px;
 }
+
 .room-selector {
     padding-top: 10px;
     padding-left: 20px;
+}
+
+#reserveOverlay {
+    border: 1px solid;
+    background-color: white;
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    z-index: 10;
+    text-align: center;
+    visibility: hidden;
+}
+
+.reserve-header {
+    padding: 18px 0 18px 0;
+    text-align: center;
+}
+
+.nextButton {
+    position: absolute;
+    left: 87%;
+    top: 90%;
+}
+
+#pinOverlay {
+    border: 1px solid;
+    background-color: white;
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    z-index: 10;
+    text-align: center;
+    visibility: hidden;
+}
+
+.numberInput {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-size: 2em;
+}
+
+#keypad {
+    height: 75%;
+    position: absolute;
+    left: 24%;
+    top: 25%;
+}
+
+.btn {
+    width: 60px;
+    font-size: 20px;
+}
+
+.noCircle {
+    width: auto !important;
+    border: none !important;
+    height: auto !important;
 }
