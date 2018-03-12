@@ -4,8 +4,6 @@ function clicked(status, name) {
     machineName = name;
     if (status === "open") {
         document.getElementById("reserveOverlay").style.visibility = "visible";
-    } else if (status === "idle") {
-    } else if (status === "busy") {
     }
 }
 
@@ -23,4 +21,10 @@ function okClicked() {
     document.getElementById(machineName).classList.remove("open");
     document.getElementById(machineName).classList.add("inUse");
     document.getElementById("status_" + machineName).textContent = "IN USE";
+}
+
+function doneClicked() {
+    $('#' + machineName).removeClass("inUse");
+    $('#' + machineName).addClass("open");
+    $('#' + machineName).find(".machine-status").text("OPEN");
 }
