@@ -100,11 +100,58 @@
                     </button>
                 </div>
                 <div class="modal-body" style="text-align:center">
-                    <div class="form-group">
-                        <input id="pinInput" type="text" class="form-control" maxlength="4" style="text-align:center">
+                    <div class="form-group" style="text-align:center">
+                        <input type="text" id="pinBox" class="pin-box" maxlength="4" disabled>
+                        <br />
+                        <table id="keypad" class="table pin-table">
+                            <tr>
+                                <td>
+                                    <button type="button" id="1button" class="btn pin-button" onclick="insertCharacter()">1</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="2button" class="btn pin-button" onclick="insertCharacter()">2</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="3button" class="btn pin-button" onclick="insertCharacter()">3</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" id="4button" class="btn pin-button" onclick="insertCharacter()">4</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="5button" class="btn pin-button" onclick="insertCharacter()">5</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="6button" class="btn pin-button" onclick="insertCharacter()">6</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" id="7button" class="btn pin-button" onclick="insertCharacter()">7</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="8button" class="btn pin-button" onclick="insertCharacter()">8</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="9button" class="btn pin-button" onclick="insertCharacter()">9</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" id="backbutton" class="btn pin-button" onclick="clearPin()">X</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="0button" class="btn pin-button" onclick="insertCharacter()">0</button>
+                                </td>
+                                <td>
+                                    <button type="button" id="okbutton" class="btn btn-primary pin-button" onclick="okClicked()" data-dismiss="modal">OK</button>
+                                </td>
+                            </tr>
+                        </table>
+
                     </div>
                      <br />
-                     <button type="button" id="doneButton" class="btn btn-primary" onclick="okClicked()" data-dismiss="modal" style="min-width:100px;">Done</button>
                 </div>
             </div>
         </div>
@@ -134,8 +181,20 @@
     $('#reserveModal').on('hidden.bs.modal', function () {
         document.getElementById("cycleSelection").style.display = "block";
         document.getElementById("enterPin").style.display = "none";
-        $('#pinInput').val('');
+        $('#pinBox').val('');
     })
+
+    function insertCharacter() {
+        var val = $('#pinBox').val();   
+        if (val.length < 4) {
+            newval = val + '*';
+            $('#pinBox').val(newval);
+        }
+    }
+
+    function clearPin() {
+        $('#pinBox').val('');
+    }
 </script>
 </body>
 
