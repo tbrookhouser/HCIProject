@@ -13,25 +13,23 @@
             <div class="navbar-header" style="margin-top:7px;">
                 @Html.ActionLink("Laundry Monitor", "Index", "Home", new { area = "" }, new { @class = "home-title" })
             </div>
-            <div class="navbar-collapse collapse">
-                <div class="nav navbar-nav" style="margin-top:15px; margin-left:62%">
-                    <select class="dropdown-custom">
-                        <option selected="selected">Kauffman</option>
-                        <option>Abel</option>
-                        <option>Sandoz</option>
-                        <option>University Suites</option>
-                    </select>
-                    <select class="dropdown-custom">
-                        <option selected="selected">Floor 1</option>
-                        <option>Floor 2</option>
-                        <option>Floor 3</option>
-                    </select>
-                </div>
-                <div>
-                    <a href='@Url.Action("Index", "Account")' class="pull-right">
-                        <img src="~/Content/Images/user-icon.svg" id="accountButton" />
-                    </a>
-                </div>
+            <div class="nav navbar-nav" style="display: inline-block; margin-left:62%; margin-top:15px;">
+                <select class="dropdown-custom">
+                    <option selected="selected">Kauffman</option>
+                    <option>Abel</option>
+                    <option>Sandoz</option>
+                    <option>University Suites</option>
+                </select>
+                <select class="dropdown-custom">
+                    <option selected="selected">Floor 1</option>
+                    <option>Floor 2</option>
+                    <option>Floor 3</option>
+                </select>
+            </div>
+            <div>
+                <a href='@Url.Action("Index", "Account")' class="pull-right">
+                    <img src="~/Content/Images/user-icon.svg" id="accountButton" />
+                </a>
             </div>
         </div>
     </div>
