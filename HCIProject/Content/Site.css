@@ -1,12 +1,48 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(Images/bubble-background-8539.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.custom-nav {
+    background-color: #e6eff2;
+    border-color: #e6eff2;
+    min-height: 60px;
+}
+
+.home-title {
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: #2a2a5f;
+}
+
+    .home-title:hover {
+        text-decoration: none;
+        color: #3a3a3a;
+    }
+
+.kiosk-body {
+    padding-left: 15%;
+    background-color: rgba(83, 83, 83, 0.42);
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.machine-group {
+    background-color: rgba(83, 83, 83, 0.42);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,42 +60,151 @@ textarea {
 }
 
 #accountButton {
-    background: url(~/Content/Images/if_User_Accounts_alt_100297.png);
-    height: 35px;
+    height: 40px;
     width: auto;
     margin-top: 5px;
     display: block;
 }
+
+.dropdown-custom {
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+select {
+    border: 0;
+    border-bottom: 2px solid #2a2a5f;
+    border-radius: 0;
+}
+
 .washer-div {
     border-radius: 5px;
     width: 175px;
     margin-bottom: 25px;
     box-shadow: 5px 5px 6px 1px rgba(128, 128, 128, 0.80);
-    height:125px;
+    height: 125px;
 }
+
 .machine-number {
     padding-top: 25px;
     text-align: center;
+    font-size: 36px;
+    color: white;
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.machine-status{
-    text-align:center;
+
+.machine-status {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    font-family: "Franklin Gothic Book", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .done {
-    background: rgba(255, 216, 0, 0.46);
+    background: rgb(15, 205, 205);
 }
+
 .inUse {
-    background: rgba(255, 0, 0, 0.58);
+    background: rgb(84, 84, 84);
 }
+
 .open {
-    background: rgba(0, 255, 33, 0.37);
+    background: rgb(149, 205, 15);
 }
+
 .machine-type-header {
     font-size: 24px;
     padding-top: 10px;
+    color: white;
+    font-family: "Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#kioskTitle {
+    color: white;
+    font-family: "Lato Black", Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
 }
 
 .room-selector {
     padding-top: 10px;
     padding-left: 20px;
+}
+
+#reserveOverlay {
+    border: 1px solid;
+    background-color: white;
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    z-index: 10;
+    text-align: center;
+    visibility: hidden;
+}
+
+.reserve-header {
+    padding: 18px 0 18px 0;
+    text-align: center;
+}
+
+.nextButton {
+    position: absolute;
+    left: 87%;
+    top: 90%;
+}
+
+#pinOverlay {
+    border: 1px solid;
+    background-color: white;
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    z-index: 10;
+    text-align: center;
+    visibility: hidden;
+}
+
+.numberInput {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-size: 2em;
+}
+
+#keypad {
+    height: 75%;
+    position: absolute;
+    left: 24%;
+    top: 25%;
+}
+
+.btn {
+    width: 60px;
+    font-size: 20px;
+}
+
+.noCircle {
+    width: auto !important;
+    border: none !important;
+    height: auto !important;
+}
+
+#doneButton {
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+#notifyButton {
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }

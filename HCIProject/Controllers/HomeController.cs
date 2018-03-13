@@ -9,10 +9,10 @@ namespace HCIProject.Controllers
 {
     public class HomeController : Controller
     {
-        LaundryRoom laundryRoom1 = new LaundryRoom();
 
-        public void InitializeLaundryRoom()
+        public LaundryRoom InitializeLaundryRoom()
         {
+            LaundryRoom laundryRoom = new LaundryRoom();
             Washer washer1 = new Washer(1, "1", "open");
             Washer washer2 = new Washer(2, "2", "open");
             Washer washer3 = new Washer(3, "3", "busy");
@@ -39,14 +39,14 @@ namespace HCIProject.Controllers
             dryerList.Add(dryer4);
             dryerList.Add(dryer5);
 
-            laundryRoom1.washerList = washerList;
-            laundryRoom1.dryerList = dryerList;
-
+            laundryRoom.washerList = washerList;
+            laundryRoom.dryerList = dryerList;
+            return laundryRoom;
         }
 
         public ActionResult Index()
         {
-            InitializeLaundryRoom();
+            var laundryRoom1 = InitializeLaundryRoom();
 
             return View(laundryRoom1);
         }
