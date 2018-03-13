@@ -1,5 +1,9 @@
 ﻿var machineName;
 
+function clicked(status, name) {
+        machineName = name;	
+}
+
 function nextClicked() {
     document.getElementById("cycleSelection").style.display = "none";
     document.getElementById("enterPin").style.display = "block";
