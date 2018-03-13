@@ -195,3 +195,16 @@ select {
     border: none !important;
     height: auto !important;
 }
+
+#doneButton {
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+#notifyButton {
+    width: 25%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}

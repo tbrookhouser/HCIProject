@@ -5,6 +5,8 @@
 
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/Scripts/Index.js")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
 
 <body class="kiosk-background">
     <div class="kiosk-body">
@@ -13,24 +15,24 @@
         <div class="row">
             @foreach (var washer in Model.washerList)
             {
-                <div class="col-sm-2" onclick="clicked('@(washer.status)', @(washer.machineName))">
+                <div class="col-sm-2" onclick="clicked('@(washer.status)', '@(washer.machineName)Washer')">
                     @if (washer.status.Equals("open"))
                     {
-                        <div id="@(washer.machineName)" class="washer-div open">
+                        <div id="@(washer.machineName)Washer" class="washer-div open">
                             <h2 class="machine-number">@washer.machineName</h2>
                             <h4 id="status_@washer.machineName" class="machine-status">OPEN</h4>
                         </div>
                     }
                     else if (washer.status.Equals("idle"))
                     {
-                        <div class="washer-div done">
+                        <div id="@(washer.machineName)Washer" class="washer-div done" data-toggle="modal" data-target="#doneModal">
                             <h2 class="machine-number">@washer.machineName</h2>
                             <h4 class="machine-status">DONE</h4>
                         </div>
                     }
                     else
                     {
-                        <div class="washer-div inUse">
+                        <div id="@(washer.machineName)Washer" class="washer-div inUse">
                             <h2 class="machine-number">@washer.machineName</h2>
                             <h4 class="machine-status">IN USE</h4>
                         </div>
@@ -42,24 +44,24 @@
         <div class="row">
             @foreach (var dryer in Model.dryerList)
             {
-                <div class="col-sm-2">
+                <div class="col-sm-2" onclick="clicked('@(dryer.status)', '@(dryer.machineName)Dryer')">
                     @if (dryer.status.Equals("open"))
                     {
-                        <div class="washer-div open">
+                        <div id="@(dryer.machineName)Dryer" class="washer-div open">
                             <h2 class="machine-number">@dryer.machineName</h2>
                             <h4 class="machine-status">OPEN</h4>
                         </div>
                     }
                     else if (dryer.status.Equals("idle"))
                     {
-                        <div class="washer-div done">
+                        <div id="@(dryer.machineName)Dryer" class="washer-div done" data-toggle="modal" data-target="#doneModal">
                             <h2 class="machine-number">@dryer.machineName</h2>
                             <h4 class="machine-status">DONE</h4>
                         </div>
                     }
                     else
                     {
-                        <div class="washer-div inUse">
+                        <div id="@(dryer.machineName)Dryer" class="washer-div inUse">
                             <h2 class="machine-number">@dryer.machineName</h2>
                             <h4 class="machine-status">IN USE</h4>
                         </div>
@@ -114,5 +116,27 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="doneModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="doneModalLabel">Done with Machine</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    I’ve finished my laundry, mark the machine as open
+                    <br />
+                    <button type="button" id="doneButton" class="btn btn-primary" onclick="doneClicked()" data-dismiss="modal">Finish</button>
+                    <br />
+                    I need this machine, let them know I'm waiting
+                    <br />
+                    <button type="button" id="notifyButton" class="btn btn-primary" data-dismiss="modal">Notify</button>
+                </div>
+            </div>
         </div>
+    </div>
 </body>
+
