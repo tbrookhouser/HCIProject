@@ -101,7 +101,7 @@
                 </div>
                 <div class="modal-body" style="text-align:center">
                     <div class="form-group">
-                        <input type="text" class="form-control" maxlength="4" style="text-align:center">
+                        <input id="pinInput" type="text" class="form-control" maxlength="4" style="text-align:center">
                     </div>
                      <br />
                      <button type="button" id="doneButton" class="btn btn-primary" onclick="okClicked()" data-dismiss="modal" style="min-width:100px;">Done</button>
@@ -130,5 +130,12 @@
             </div>
         </div>
     </div>
+<script>
+    $('#reserveModal').on('hidden.bs.modal', function () {
+        document.getElementById("cycleSelection").style.display = "block";
+        document.getElementById("enterPin").style.display = "none";
+        $('#pinInput').val('');
+    })
+</script>
 </body>
 

@@ -20,9 +20,6 @@ function okClicked() {
     $('#' + machineName).removeClass("open");
     $('#' + machineName).addClass("inUse");
     $('#' + machineName).find(".machine-status").text("IN USE");
-
-    document.getElementById("cycleSelection").style.display = "block";
-    document.getElementById("enterPin").style.display = "none";
 }
 
 function doneClicked() {
