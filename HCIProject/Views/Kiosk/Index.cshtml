@@ -18,7 +18,7 @@
                 <div class="col-sm-2" onclick="clicked('@(washer.status)', '@(washer.machineName)Washer')">
                     @if (washer.status.Equals("open"))
                     {
-                        <div id="@(washer.machineName)Washer" class="washer-div open">
+                        <div id="@(washer.machineName)Washer" class="washer-div open" data-toggle="modal" data-target="#reserveModal">
                             <h2 class="machine-number">@washer.machineName</h2>
                             <h4 id="status_@washer.machineName" class="machine-status">OPEN</h4>
                         </div>
@@ -47,7 +47,7 @@
                 <div class="col-sm-2" onclick="clicked('@(dryer.status)', '@(dryer.machineName)Dryer')">
                     @if (dryer.status.Equals("open"))
                     {
-                        <div id="@(dryer.machineName)Dryer" class="washer-div open">
+                        <div id="@(dryer.machineName)Dryer" class="washer-div open" data-toggle="modal" data-target="#reserveModal">
                             <h2 class="machine-number">@dryer.machineName</h2>
                             <h4 class="machine-status">OPEN</h4>
                         </div>
@@ -70,51 +70,43 @@
             }
         </div>
 
-        <div id="reserveOverlay">
-            <button class="close" onclick="closeClicked('reserveOverlay')">X</button>
-            <h3 class="reserve-header">Reserve</h3>
-            <form>
-                <p class="cycle-type">Select Cycle Type</p>
-                <select>
-                    <option> Regular Wash </option>
-                    <option> Delicates </option>
-                    <option> Permanent Press </option>
-                </select>
-            </form>
-            <button class="nextButton" onclick="nextClicked()">Next</button>
-        </div>
-
-        <div id="pinOverlay">
-            <button class="close" onclick="closeClicked('pinOverlay')">X</button>
-            <h3>Enter Pin</h3>
-            <div>
-                <span class="numberInput"></span>
-                <span class="numberInput"></span>
-                <span class="numberInput"></span>
-                <span class="numberInput"></span>
+    <div class="modal" id="reserveModal" tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="cycleSelection">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reserveModalLabel">Reserve Machine</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center;">
+                    <form>
+                        <p class="cycle-type">Select Cycle Type</p>
+                        <select>
+                            <option> Regular Wash </option>
+                            <option> Delicates </option>
+                            <option> Permanent Press </option>
+                        </select>
+                    </form>
+                    <br />
+                    <button type="button" id="doneButton" class="btn btn-primary" onclick="nextClicked()">Next</button>
+                </div>
             </div>
-            <table id="keypad">
-                <tr>
-                    <td class="btn">1</td>
-                    <td class="btn">2</td>
-                    <td class="btn">3</td>
-                </tr>
-                <tr>
-                    <td class="btn">4</td>
-                    <td class="btn">5</td>
-                    <td class="btn">6</td>
-                </tr>
-                <tr>
-                    <td class="btn">7</td>
-                    <td class="btn">8</td>
-                    <td class="btn">9</td>
-                </tr>
-                <tr>
-                    <td class="btn">DEL</td>
-                    <td class="btn">0</td>
-                    <td class="btn" onclick="okClicked()">OK</td>
-                </tr>
-            </table>
+            <div class="modal-content" id="enterPin" style="display:none">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reserveModalLabel">Enter your Pin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align:center">
+                    <div class="form-group">
+                        <input type="text" class="form-control" maxlength="4" style="text-align:center">
+                    </div>
+                     <br />
+                     <button type="button" id="doneButton" class="btn btn-primary" onclick="okClicked()" data-dismiss="modal" style="min-width:100px;">Done</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="doneModalLabel" aria-hidden="true">
