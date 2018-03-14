@@ -1,26 +1,18 @@
 ﻿var machineName;
 
 function clicked(status, name) {
-    machineName = name;
-    if (status === "open") {
-        document.getElementById("reserveOverlay").style.visibility = "visible";
-    }
-}
-
-function closeClicked(string) {
-    document.getElementById(string).style.visibility = 'hidden';
+        machineName = name;	
 }
 
 function nextClicked() {
-    document.getElementById("reserveOverlay").style.visibility = "hidden";
-    document.getElementById("pinOverlay").style.visibility = "visible";
+    document.getElementById("cycleSelection").style.display = "none";
+    document.getElementById("enterPin").style.display = "block";
 }
 
 function okClicked() {
-    document.getElementById('pinOverlay').style.visibility = "hidden";
-    document.getElementById(machineName).classList.remove("open");
-    document.getElementById(machineName).classList.add("inUse");
-    document.getElementById("status_" + machineName).textContent = "IN USE";
+    $('#' + machineName).removeClass("open");
+    $('#' + machineName).addClass("inUse");
+    $('#' + machineName).find(".machine-status").text("IN USE");
 }
 
 function doneClicked() {
